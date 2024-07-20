@@ -8,7 +8,7 @@ Resultados de reconstruccion: "reconstruccionkeff.txt" y "reconstruccionmasa.txt
 '''
 
 
-#importamos las funciones necesarias
+# Importamos las funciones necesarias
 import numpy as np
 import matplotlib.pyplot as plt
 import lenstronomy.Util.simulation_util as sim_util
@@ -30,7 +30,7 @@ plt.rcParams.update({'font.size': 11})
 plt.rcParams['figure.dpi'] = 100
 plt.rcParams['savefig.dpi'] = 100
 
-# parámetros de la foto
+# Parámetros de la foto
 background_rms = 0.5 # ruido de fondo por píxel
 exp_time = 100 # tiempo de exposición
 numPix = 200 # numero de píxeles de la imagen
@@ -48,7 +48,7 @@ kwargs_psf = {"psf_type": "GAUSSIAN",
 "truncation": 5}
 psf_class = PSF(**kwargs_psf)
 
-################################### PARTE 1: GENERAMOS IMAGEN ##########################################
+################################## PARTE 1: GENERAMOS IMAGEN ##########################################
 #Parámetros del sistema
 zl=0.3 # redshift de la lente
 zs=1.5 # redshift de la fuente
@@ -173,7 +173,7 @@ plt.xticks([0,50,100,150,200],[-5,-2.5,0,2.5,5])
 plt.yticks([0,50,100,150,200],[5,2.5,0,-2.5,-5])
 plt.show()
 
-############################ PARTE 2: ALGORITMO DE RECONSTRUCCIÓN ###############################
+########################### PARTE 2: ALGORITMO DE RECONSTRUCCIÓN ###############################
 # Añadimos error gaussiano a las "observaciones"
 mu, sigma = 0, 0.015 # media y desvaición estándar
 s1 = np.random.normal(mu, sigma, len(x_image))
